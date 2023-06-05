@@ -10,7 +10,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-
 """
 
 The hyperparameters used in the model:
@@ -30,7 +29,9 @@ The hyperparameters that could be used in the model:
 
 To run:
 
-$ python rnn_gan.py --model small|medium|large --datadir simple-examples/data/ --traindir dir-for-checkpoints-and-plots --select_validation_percentage 0-40 --select_test_percentage 0-40
+$ python rnn_gan_tf2.py --model small|medium|large --datadir simple-examples/data/ --traindir dir-for-checkpoints-and-plots --select_validation_percentage 0-40 --select_test_percentage 0-40
+
+Adapted from Tensorflow 1.x for Tensorflow 2.x
 
 """
 from __future__ import absolute_import
@@ -42,7 +43,9 @@ import pickle as pkl
 from subprocess import call, Popen
 
 import numpy as np
-import tensorflow.compat.v1 as tf
+import sklearn as sk
+import tensorflow._api.v2.compat.v1 as tf
+tf.disable_v2_behavior()
 from tensorflow.python.client import timeline
 
 
