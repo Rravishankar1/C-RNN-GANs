@@ -21,4 +21,3 @@ tensorflow
 ## How to run?
 
 python rnn_gan_tf2.py --datadir "./data/spy" --traindir "./outputs/spyout" --feed_previous --feature_matching --bidirectional_d --learning_rate 0.1 --pretraining_epochs 6
-
